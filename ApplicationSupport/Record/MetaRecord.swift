@@ -20,7 +20,7 @@ public protocol MetaRecord {}
 
 public extension MetaRecord {
     // Use debugPrint to receive nested classes names.
-    public final static var modelName: String {
+    public static var modelName: String {
         var className = ""
         debugPrint(self, separator: "", terminator: "", to: &className)
         return className.components(separatedBy: ".").dropFirst().joined(".")

@@ -45,13 +45,13 @@ public extension Record {
     
     init(with attributes: RecordObject) {
         self.init()
-        let map = Map(mappingType: .fromJSON, JSONDictionary: attributes, toObject: true, context: nil)
+        let map = Map(mappingType: .fromJSON, JSON: attributes, toObject: true, context: nil)
         self.mapping(map: map)
         self.timeline.enqueue(attributes)
     }
     
     mutating func update(with attributes: RecordObject) {
-        let map = Map(mappingType: .fromJSON, JSONDictionary: attributes, toObject: true, context: nil)
+        let map = Map(mappingType: .fromJSON, JSON: attributes, toObject: true, context: nil)
         self.mapping(map: map)
         self.timeline.enqueue(attributes)
     }
